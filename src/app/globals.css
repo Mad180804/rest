@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* styles.css */
+@keyframes fly {
+  0% {
+    transform: translate(360px, 55px) rotate(0deg);
+  }
+  50% {
+    transform: translate(800px, 55px) rotate(80deg);
+  }
+  100% {
+    transform: translate(900px, 100px) rotate(45deg);
+  }
+}
+@keyframes glows{
+  0%{
+    text-shadow: 0 0 3px #FFFF33
+  }
+  30% {
+    text-shadow: 0 0 10px #FFFF33
+  }
+  100%{
+    text-shadow: 0 0 4px #FFFF33
+  }
+}
+.tells{
+  /* color: #FFFF33; */
+  animation:glowsD 3s ease-in-out infinite;
+}
+.header-glow{
+  text-shadow: 0 0 15px #FFFF33
+}
+
+input[type="email"]:disabled,
+input[type="password"]:disabled,
+input[type="text"]:disabled
+{
+  background-color: gray;
+}
+button[type='submit']:disabled,
+.submit:disabled{
+    cursor: not-allowed;
+}
+.roundabout{
+  animation: round 3s ease-in-out infinite;
+
+}
+@keyframes round {
+  0% {
+    transform:  rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* 
+.retro-tv-container {
+  width: 900px;
+  height: 550px;
+  background-color: #5e4635;
+  border-radius: 30px;
+  border: 15px solid #4b3621;
+  position: relative;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tv-screen {
+  width: 70%;
+  height: 85%;
+  background-color: #000;
+  margin: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  border: 5px solid #2a1f16;
+}
+
+.antenna {
+  width: 5px;
+  height: 100px;
+  background-color: #333;
+  position: absolute;
+  top: -110px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tv-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  gap:50px;
+  background-color:black;
+  padding:0px;
+  margin-bottom:170px;
+  height: 260px;
+  width: 180px;
+  
+}
+
+.tv-button {
+  width: 80px;
+  height: 100px;
+  background-color: #3a2e23;
+  border-radius: 50%;
+  margin: 10px 0;
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.4), inset 3px 3px 5px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.tv-button:hover {
+  background-color: #4b3621;
+}
+ */
+
+
+ .retro-tv-container {
+  width: 900px;
+  height: 550px;
+  /* background-image: url('https://www.shutterstock.com/image-illustration/abstract-bokeh-background-high-quality-260nw-325540196.jpg');  */
+  background-color: #333;
+  background-size: cover; 
+  border-radius: 30px;
+  border: 15px solid #4f4f4f; 
+  position: relative;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.8);
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.tv-screen {
+  width: 70%;
+  height: 85%;
+  z-index: 1;
+  margin: 30px;
+  border-radius: 50px; 
+  position: relative;
+  border: 25px solid #202020; 
+  box-shadow: inset 0 0 10px rgba(65, 51, 51, 0); 
+  /* overflow: hidden; */
+  background-color: #d1d1d1;
+}
+
+/* Curved CRT screen effect */
+
+
+
+
+/* Antenna styling */
+.antenna {
+  width: 5px;
+  height: 120px;
+  background-color: #333; /* Antenna color */
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+/* Button panel styling */
+.tv-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  gap: 20px; /* Reduced gap for tighter spacing */
+  background-color: #2d2d2d;/* Darker background for buttons */
+  padding: 20px;
+  margin-bottom: 170px;
+  height: 260px;
+  width: 180px;
+  border-radius: 10px; /* Rounded corners for button panel */
+  box-shadow: inset 0 0 80px rgb(0, 0, 0); /* Shadow for button panel */
+}
+
+/* Button styling */
+.tv-button {
+  width: 80px;
+  height: 80px; /* Adjusted height */
+  background-color: gray; /* Darker button color */
+  border-radius: 50%; /* Circular buttons */
+  margin: 10px 0;
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.4), inset 3px 3px 5px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+
+
+/* Inner circle for a more realistic look */
+.knob::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px; /* Inner circle size */
+  height: 10px; /* Inner circle size */
+  background-color: #666; /* Inner circle color */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+.vent::before,
+.vent::after {
+  content: '';
+  display: block;
+  width: 80%; /* Width of the vent lines */
+  height: 3px; /* Thickness of the lines */
+  background-color: #333; /* Color of the vent lines */
+  margin: 2px auto; /* Centered with spacing */
+}
+
+.vent::after {
+  margin-top: 0; /* No extra margin for the last line */
+}
